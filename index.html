@@ -111,7 +111,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
 
-      <center><img src="./SELMA/teaser_big.png" alt="Teaser" width="70%"></center>
+      <center><img src="./SELMA/teaser_big.png" alt="Teaser" width="100%"></center>
 
       <div class="content has-text-justified">
         Comparison of different fine-tuning paradigms for text-to-image (T2I) generation models.
@@ -140,7 +140,23 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Diffusion models have demonstrated impressive capabilities in generating images from text descriptions. However, these text-to-image (T2I) generation models often fall short of generating images that precisely match the details of the text inputs, such as incorrect spatial relationship or missing objects. In this paper, we introduce SELMA: Skill-Specific Expert Learning and Merging with Auto-Generated Data, a novel paradigm to improve the faithfulness of T2I models by fine-tuning models on automatically generated, multi-skill image-text datasets, with skill-specific expert learning and merging. First, SELMA leverages an LLM’s in-context learning capability to generate multiple datasets of text prompts that can teach different skills, and then generates the images with a T2I model based on the prompts. Next, SELMA adapts the T2I model to the new skills by learning multiple single-skill LoRA (low-rank adaptation) experts followed by expert merging. Our independent expert fine-tuning specializes multiple models for different skills, and expert merging helps build a joint multi-skill T2I model that can generate faithful images given diverse text prompts, while mitigating the knowledge conflict from different datasets. We empirically demonstrate that SELMA significantly improves the semantic alignment and text faithfulness of state-of-the-art text-to-image diffusion models on multiple benchmarks (+2.1% on TIFA and +6.9% on DSG), human preference metrics (PickScore, ImageReward, and HPS), as well as human evaluation. Moreover, fine-tuning with image-text pairs auto-collected via SELMA shows comparable performance to fine-tuning with ground truth data. Lastly, we show that fine-tuning with images from a weaker T2I model can help improve the generation quality of a stronger T2I model, suggesting promising weak-to-strong generalization in T2I models.
+            Recent text-to-image (T2I) generation models have demonstrated impressive capabilities in creating images from text
+            descriptions. However, these T2I generation models often fall short of generating images that precisely match the
+            details of the text inputs, such as incorrect spatial relationship or missing objects. In this paper, we introduce
+            <b>SELMA: Skill-Specific Expert Learning and Merging with Auto-Generated Data</b>, a novel paradigm to improve the faithfulness
+            of T2I models by fine-tuning models on automatically generated, multi-skill image-text datasets, with skill-specific
+            expert learning and merging. First, SELMA leverages an LLM's in-context learning capability to generate multiple
+            datasets of text prompts that can teach different skills, and then generates the images with a T2I model based on the
+            prompts. Next, SELMA adapts the T2I model to the new skills by learning multiple single-skill LoRA (low-rank adaptation)
+            experts followed by expert merging. Our independent expert fine-tuning specializes multiple models for different skills,
+            and expert merging helps build a joint multi-skill T2I model that can generate faithful images given diverse text
+            prompts, while mitigating the knowledge conflict from different datasets. We empirically demonstrate that SELMA
+            significantly improves the semantic alignment and text faithfulness of state-of-the-art T2I diffusion models on multiple
+            benchmarks (+2.1% on TIFA and +6.9% on DSG), human preference metrics (PickScore, ImageReward, and HPS), as well as
+            human evaluation. Moreover, fine-tuning with image-text pairs auto-collected via SELMA shows comparable performance to
+            fine-tuning with ground truth data. Lastly, we show that fine-tuning with images from a weaker T2I model can help
+            improve the generation quality of a stronger T2I model, suggesting promising weak-to-strong generalization in T2I
+            models.
           </p>
         </div>
       </div>
@@ -160,14 +176,14 @@
 
       <div class="content has-text-justified">
 <p>Illustration of the four-stage pipeline of SELMA.
-    (a) Prompt Generation:
-    Given a short skill description and a few (i.e., three) seed examples about a specific skill, we generate prompts to teach the skill with an LLM.
-    (b) Image Generation:
+    <b>(a) Prompt Generation:</b>
+    Given a short skill description and a few (i.e., three) seed examples about a specific skill, we generate prompts to teach the skill with an LLM, while maintaining prompt diversity via text-similarity based filtering.
+    <b>(b) Image Generation:</b>
     Given the LLM-generated text prompts, we
     generate training images with a T2I model.
-    (c) Skill-Specific Expert Learning:
+    <b>(c) Skill-Specific Expert Learning:</b>
     We learn skill-specific expert T2I models based on LoRA fine-tuning.
-    (d) Merging Expert Models:
+    <b>(d) Merging Expert Models:</b>
     We obtain a multi-skill T2I model by merging the skill-specific LoRA parameters. </p>
       </div>
 
@@ -212,8 +228,8 @@ SELMA helps improve SDXL in various skills, including counting, text rendering, 
       Comparison of SELMA and different
   text-to-image alignment
   methods
-  on text faithfulness and human preference.
-  SELMA achieves the best performance in all five metrics when adapted on different base models (i.e., SD v1.4, SD v2, SDXL).
+  on text faithfulness and human preference metrics.
+  SELMA achieves the best performance in all five metrics when adapted on different base models (i.e., SD v1.4, SD v2, and SDXL).
     </div>
   </div>
   </div>

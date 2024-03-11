@@ -1,1 +1,378 @@
-SELMA
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PanoGen: Text-Conditioned Panoramic Environment Generation for Vision-and-Language Navigation">
+  <meta name="keywords" content="VLN">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PanoGen: Text-Conditioned Panoramic Environment Generation for Vision-and-Language Navigation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./prj_static/css/bulma.min.css">
+  <link rel="stylesheet" href="./prj_static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./prj_static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./prj_static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./prj_static/css/index.css">
+  <!-- <link rel="icon" href="./prj_static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./prj_static/js/fontawesome.all.min.js"></script>
+  <script src="./prj_static/js/bulma-carousel.min.js"></script>
+  <script src="./prj_static/js/bulma-slider.min.js"></script>
+  <script src="./prj_static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://jialuli-luka.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://pano-gen.github.io">
+            PanoGen
+          </a>
+          <a class="navbar-item" href="https://jialuli-luka.github.io/VLN-SIG">
+            VLN-SIG
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2203.15685">
+            EnvEdit
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2207.02185">
+            CLEAR
+          </a>
+          <a class="navbar-item" href="https://aclanthology.org/2021.naacl-main.82/">
+            SyntaxVLN
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">PanoGen: Text-Conditioned Panoramic Environment Generation for Vision-and-Language Navigation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jialuli-luka.github.io/">Jialu Li</a>      </span>
+            <span class="author-block", style="padding-left:30px">
+              <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of North Carolina, Chapel Hill</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">NeurIPS 2023</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2305.19195"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/jialuli-luka/PanoGen"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      <center>
+        <video id="teaser" autoplay controls muted loop width="80%">
+          <source src="./PanoGen/panorama.mp4" type="video/mp4">
+        </video>
+        </center>
+
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vision-and-Language Navigation requires the agent to follow language instructions to navigate through 3D environments. One main challenge in Vision-and-Language Navigation is the limited availability of photorealistic training environments, which makes it hard to generalize to new and unseen environments. To address this problem, we propose <b>PanoGen, a generation method that can potentially create an infinite number of diverse panoramic environments conditioned on text.</b> Specifically, we collect room descriptions by captioning the room images in existing Matterport3D environments, and leverage a state-of-the-art text-to-image diffusion model to generate the new panoramic environments. We use <b>recursive outpainting over the generated images to create consistent 360-degree panorama views.</b> Our new panoramic environments share similar semantic information with the original environments by conditioning on text descriptions, which ensures the co-occurrence of objects in the panorama follows human intuition, and creates enough diversity in room appearance and layout with image outpainting. Lastly, we explore two ways of utilizing PanoGen in VLN pre-training and fine-tuning. We generate instructions for paths in our PanoGen environments with a speaker built on a pre-trained vision-and-language model for VLN pre-training, and augment the visual observation with our panoramic environments during agents' fine-tuning to avoid overfitting to seen environments.
+        Empirically, <b>learning with our PanoGen environments achieves the new state-of-the-art on the Room-to-Room, Room-for-Room, and CVDN datasets.</b> Besides, we find that pre-training with our PanoGen speaker data is especially effective for CVDN, which has under-specified instructions and needs commonsense knowledge to reach the target. Lastly, we show that the agent can benefit from training with more generated panoramic environments, suggesting promising results for scaling up the PanoGen environments to enhance agents' generalization to unseen environments.
+          </p>
+        </div>
+      </div>
+    </div>
+
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title is-3">Overview</h2>
+
+      <center><img src="./PanoGen/overview.png" alt="Teaser" width="100%"></center>
+
+      <div class="content has-text-justified">
+<p>Overview of our PanoGen. We first generate captions for all the room panoramas in the Matterport3D dataset. Each panorama is discretized into 36 views, we show 15 views here for a better view of each discretized image. Then, we generate panoramic environments with recursive outpainting over a single image generated from the text caption.  </p>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title is-3">Method</h2>
+
+      <center><img src="./PanoGen/method.png" alt="Teaser" width="100%"></center>
+
+      <div class="content has-text-justified">
+<p>We first collect descriptions of room environments by using a state-of-the-art vision-language model BLIP-2 to annotate the view images in the Matterport3D dataset. Then, we use text-to-image diffusion models to generate diverse room images based on the text captions. Specifically, we propose a `recursive' image outpainting approach, which reconstructs missing regions in an image based on text captions. We choose one generated image in the panorama as the starting point, and gradually rotate the camera angle right, left, up, and down, and then outpaint the unseen observation based on text descriptions. </p>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title is-3">Generation Examples</h2>
+
+<center><img src="./PanoGen/qual_eval.png" alt="Teaser" width="100%"></center>
+      <div class="content has-text-justified">
+<p>
+  Directly generating discretized views based on caption will be disjoint and inconsistent (Row “Stable Diffusion for Discretized Views”).  In comparison, our recursive outpainting approach could generate continuous views that can be stitched together to form a high-quality panorama (Row “PanoGen”).
+
+Besides the high quality and coherency, our generated panorama environments is able to preserve the wide range of objects appeared in the original environments, while generating them with new appearance and different room layout. For example, in the left generated panorama, it contains a corridor view, and shows multiple rooms that are connected to the corridor (e.g., bedroom, and bathroom). This layout also follows human's commonsense knowledge, where the bedroom and bathroom can be connected with a corridor.
+ </p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title is-3">Results</h2>
+    <h2 class="title is-5">Test Leaderboard Performance</h2>
+    <center>
+    <table border="1" >
+  <tr>
+    <th style="text-align: center; vertical-align: middle;" colspan="1">Model</th>
+    <th style="text-align: center; vertical-align: middle;" colspan="4">R2R</th>
+    <th style="text-align: center; vertical-align: middle;" colspan="2">CVDN</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;" colspan="1"></td>
+    <td style="text-align: center; vertical-align: middle;" colspan="2">Val Unseen</td>
+    <td style="text-align: center; vertical-align: middle;" colspan="2">Test</td>
+    <td style="text-align: center; vertical-align: middle;" colspan="1">Val Unseen</td>
+    <td style="text-align: center; vertical-align: middle;" colspan="1">Test</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="text-align: center; vertical-align: middle;">SR</td>
+    <td style="text-align: center; vertical-align: middle;">SPL</td>
+    <td style="text-align: center; vertical-align: middle;">SR</td>
+    <td style="text-align: center; vertical-align: middle;">SPL</td>
+    <td style="text-align: center; vertical-align: middle;">GP</td>
+    <td style="text-align: center; vertical-align: middle;">GP</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle; width: 20%"><a href="https://arxiv.org/abs/2002.10638">PREVALENT</a></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">58</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">53</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">54</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">51</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">3.15</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">2.44</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle; width: 20%"><a href="https://arxiv.org/abs/2011.13922">Rec-BERT</a></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">63</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">57</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">63</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">57</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">-</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">-</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle; width: 20%"><a href="https://arxiv.org/abs/2110.13309">HAMT</a></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">66</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">61</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">65</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">60</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">5.13</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">5.58</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle; width: 20%"><a href="https://arxiv.org/abs/2202.11742">DUET</a></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">72</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">60</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">69</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">59</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">-</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%">-</td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle; width: 20%">PanoGen</td>
+    <td style="text-align: center; vertical-align: middle; width: 10%"><b>74</b></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%"><b>64</b></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%"><b>72</b></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%"><b>62</b></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%"><b>5.93</b></td>
+    <td style="text-align: center; vertical-align: middle; width: 10%"><b>7.17</b></td>
+  </tr>
+</table>
+</center>
+      <div class="content has-text-justified">
+<p>Comparison with state-of-the-art agents on Room-to-Room (R2R) and Cooperative Vision-and-Dialog Navigation (CVDN) validation unseen set and test leaderboard.</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-5">Ablation Results -- Effectiveness of Speaker Data</h2>
+
+    <center><img src="./PanoGen/table1.png" alt="Teaser" width="100%"></center>
+
+    <div class="content has-text-justified">
+      We show the effectiveness of utilizing the speaker data generated for our PanoGen environments for VLN pre-training on R2R, R4R, and CVDN validation unseen set.
+    </div>
+  </div>
+  </div>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-5">Ablation Results -- Effectiveness of Observation Augmentation</h2>
+
+    <center><img src="./PanoGen/table2.png" alt="Teaser" width="100%"></center>
+
+    <div class="content has-text-justified">
+      We show the effectiveness of replacing the original environment with our panoramic observation during fine-tuning on R2R, R4R, and CVDN validation unseen set.
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+<hr>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{li2023panogen,
+  author    = {Jialu Li, and Mohit Bansal},
+  title     = {PanoGen: Text-Conditioned Panoramic Environment Generation for Vision-and-Language Navigation},
+  journal   = {arxiv},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align:right;font-size:small;">
+          <a href="https://github.com/nerfies/nerfies.github.io">
+            This guy makes a nice webpage.
+          </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

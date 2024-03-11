@@ -72,7 +72,7 @@
             <span class="author-block">University of North Carolina, Chapel Hill</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">* denotes equal contribution</span>
+            <span class="author-block">*: equal contribution</span>
           </div>
 
           <div class="column has-text-centered">
@@ -97,15 +97,7 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
+              
             </div>
 
         </div>
@@ -123,11 +115,11 @@
 
       <div class="content has-text-justified">
         Comparison of different fine-tuning paradigms for text-to-image (T2I) generation models.
-    (a) Supervised Fine-tuning (SFT): a T2I model is trained with image-text pairs from existing datasets.
-    (b) Fine-tuning with Human Preference (e.g., RL/DPO):
+    <b>(a) Supervised Fine-tuning (SFT)</b>: a T2I model is trained with image-text pairs from existing datasets.
+    <b>(b) Fine-tuning with Human Preference (e.g., RL/DPO)</b>:
     humans annotate their preferences on images by ranking/scoring in terms of text alignments,
     and a T2I model is trained to maximize the human preference scores.
-    (c) SELMA:
+    <b>(c) SELMA</b>:
     instead of collecting image-text pairs or human preference annotations,
     we automatically collect image-text pairs for desired skills with LLM and T2I model,
     and create a multi-skill T2I model by
@@ -208,7 +200,11 @@ SELMA helps improve SDXL in various skills, including counting, text rendering, 
   <div class="container is-max-desktop">
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-      <h2 class="title is-5">Text Faithfulness Evaluation</h2>
+      <h2 class="title is-3">Experiments</h2>
+
+      <br><br>
+
+      <h2 class="title is-5">SELMA vs. Different Alignment Methods for T2I Generation</h2>
 
     <center><img src="./SELMA/table1.png" alt="Teaser" width="100%"></center>
 
@@ -220,6 +216,35 @@ SELMA helps improve SDXL in various skills, including counting, text rendering, 
   SELMA achieves the best performance in all five metrics when adapted on different base models (i.e., SD v1.4, SD v2, SDXL).
     </div>
   </div>
+  </div>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-5">Effectiveness of Learning & Merging Skill-Specific Experts</h2>
+  
+      <center><img src="./SELMA/table4.png" alt="Teaser" width="100%"></center>
+  
+      <div class="content has-text-justified">
+        Comparison of single LoRA and LoRA Merging in text faithfulness and human preference. We show that learning and
+        merging skill-specific LoRA experts is more effective than single LoRA on
+        multiple datasets.
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-5">Effectiveness of Auto-Generated Data</h2>
+  
+      <center><img src="./SELMA/figure1.png" alt="Teaser" width="80%"></center>
+  
+      <div class="content has-text-justified">
+        DSG accuracy of SD v2 fine-tuned with different image-text pairs. We find that fine-tuning with auto-generated
+        data can achieve comparable performance to fine-tuning with
+        ground truth data.
+      </div>
+    </div>
+  
   </div>
 
   <div class="columns is-centered has-text-centered">
@@ -246,36 +271,13 @@ SELMA helps improve SDXL in various skills, including counting, text rendering, 
       Human Evaluation on 200 sampled text prompts from DSG,
     where we
     show the win vs. lose percentages
-    of SDXL and SDXL+SELMA. SDXL+SELMA is preferred than SDXL in terms of text alignment.
+    of SDXL and SDXL+SELMA. SDXL+SELMA is preferred by human annotators than SDXL in terms of text alignment.
     </div>
   </div>
   </div>
 
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-      <h2 class="title is-5">Ablation on LoRA Merging</h2>
 
-    <center><img src="./SELMA/table4.png" alt="Teaser" width="100%"></center>
-
-    <div class="content has-text-justified">
-Comparison of single LoRA and LoRA Merging in text faithfulness and human preference. We show that learning and merging skill-specific LoRA experts is more effective than single LoRA on
-multiple datasets.
-    </div>
-  </div>
-  </div>
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-      <h2 class="title is-5">Effectiveness of Auto-Generated Data</h2>
-
-    <center><img src="./SELMA/figure1.png" alt="Teaser" width="100%"></center>
-
-    <div class="content has-text-justified">
-DSG accuracy of SD v2 fine-tuned with different image-text pairs. We find that fine-tuning with auto-generated data can achieve comparable performance to fine-tuning with
-ground truth data.
-    </div>
-  </div>
-
-  </div>
+  
   
 </section>
 
